@@ -141,8 +141,7 @@ cd WQBackup
 
 ```
 WQBackup/
-├── WQBackup.ipa                 # 构建产物（请重新签名后安装）
-├── build.sh                     # 构建 + 预检 + 打包 + 签名校验
+├── build.sh                     # 构建 + 预检 + 打包 + 签名校验（产物不提交，见 Releases）
 ├── Info.plist / entitlements.plist
 ├── main.m
 ├── WQAccess.* WQAccessSafety.h WQScanJournal.h WQLaunchServices.* WQArchive.*
