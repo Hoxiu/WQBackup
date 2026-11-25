@@ -133,7 +133,7 @@ cd WQBackup
 
 - 沙盒访问：直接复用 **WQ Files 0.9.16** 的 `WQAccess`/`WQScanJournal`/`WQLaunchServices`/`WQArchive`/`WQAppsSupport` 访问与校验代码（GPL-3.0-or-later，保留了原文件头）。worse_query 由 Taj C（forcequitOS）发现。
 - 本机应用发现：容器管理器/LaunchServices 数据库枚举 + 容器标识解析。
-- LiveContainer 发现：不依赖固定 Bundle ID（本机就有 `com.kdt.livecontainer.R543VMPALT` 和 `com.kdt.LiveContainer2.R543VMPALT` 两个实例），而是检查容器的 `Documents/Applications` 布局和 App Group 内的 `LiveContainer/Applications`。
+- LiveContainer 发现：不依赖固定 Bundle ID（例如 `com.kdt.livecontainer.R543VMPALT` 和 `com.kdt.LiveContainer2.R543VMPALT` 两个实例），而是检查容器的 `Documents/Applications` 布局和 App Group 内的 `LiveContainer/Applications`。
 - 备份复制：`wq_copy_contents`/`wq_copy_tree_new` 跨容器复制，复制前后对源树做 SHA-256 元数据签名比较，确保复制期间源数据没有变化；可选的逐字节内容校验会与清单里的 `PartHashes` 对照。
 - 全部文件操作都在本机完成，不上传网络；分享 ZIP 仅在用户主动点击分享时交给系统分享面板。
 
